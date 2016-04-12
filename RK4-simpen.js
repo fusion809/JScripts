@@ -32,7 +32,7 @@ var y        = 0.0, // y[0]  = 0
     dy       = 0.0, // dy[0] = 0
     x        = 0.0, // x0    = 0
     xmax     = 10,  // x1    = 10
-    maxSteps = 100001, // steps
+    maxSteps = 1000001, // steps
     step     = xmax / maxSteps,
     steps    = 0,
     X        = constructor(maxSteps - 1),
@@ -41,20 +41,22 @@ var y        = 0.0, // y[0]  = 0
 
 while (steps < maxSteps) {
 
-    y = rk4(x, step, y, dy, f)[0];
-    dy = rk4(x, step, y, dy, f)[1];
-    Y[steps] = y
+    y         = rk4(x, step, y, dy, f)[0];
+    dy        = rk4(x, step, y, dy, f)[1];
+    Y[steps]  = y
     dY[steps] = dy
     // using integer math for the step addition
     // to prevent floating point errors as 0.2 + 0.1 != 0.3
-    x = ((x * 10) + (step * 10)) / 10;
-    X[steps] = x
-    steps += 1;
+    x         = ((x * 10) + (step * 10)) / 10;
+    X[steps]  = x
+    steps    += 1;
 }
 
 var Yarr  = Object.keys(Y).map(function (key) {return [X[key], Y[key]]}); // inspired by http://stackoverflow.com/a/26166303/1876983
 var dYarr = Object.keys(dY).map(function (key) {return [X[key], dY[key]]}); // inspired by http://stackoverflow.com/a/26166303/1876983
 var Parr  = Object.keys(Y).map(function (key) {return [Y[key], dY[key]]}); // inspired by http://stackoverflow.com/a/26166303/1876983
+
+console.log(X[0])
 
 gnuplot(0).plot([{
     title:"y[x] vs. x",
