@@ -10,6 +10,7 @@
 
 var gnuplot = require('gnu-plot'); // Requires the gnu-plot Node.js module
 
+// This function computes y and dy using RK4
 function rk4(x, dx, y, dy, f) {
     var l1 = dx * f(x, y, dy),
         k1 = dx * dy,
@@ -18,30 +19,25 @@ function rk4(x, dx, y, dy, f) {
         l3 = dx * f(x + dx / 2.0,   +y + k2 / 2.0,  +dy + l2 / 2.0),
         k3 = dx * (dy + l2 / 2.0),
         l4 = dx * f(x + dx,         +y + k3,        +dy + l3),
-        k4 = dx * (dy + l3),
-        R1 = [y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0, dy + (l1 + 2.0 * l2 + 2.0 * l3 + l4) / 6.0];
+        k4 = dx * (dy + l3)
     return [y + (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0, dy + (l1 + 2.0 * l2 + 2.0 * l3 + l4) / 6.0];
 }
 
+// d2y/dx2 = f(x,y,dy/dx)
 function f(x, y, dy) {
     return -9.8*Math.cos(y);
 }
 
-var y = 0.0,
-    dy = 0.0,
-    x = 0.0,
-    ymax = 10,
-    maxSteps = 100001,
-    step = ymax / maxSteps,
-    diff = 0,
-    yex = 0,
-    err2 = 0,
-    err = 0,
-    steps = 0,
-    X = constructor(maxSteps - 1),
-    Y = constructor(maxSteps - 1),
-    dY = constructor(maxSteps -1),
-    sampleEveryN = 10;
+var y        = 0.0, // y[0]  = 0
+    dy       = 0.0, // dy[0] = 0
+    x        = 0.0, // x0    = 0
+    xmax     = 10,  // x1    = 10
+    maxSteps = 100001, // steps
+    step     = xmax / maxSteps,
+    steps    = 0,
+    X        = constructor(maxSteps - 1),
+    Y        = constructor(maxSteps - 1),
+    dY       = constructor(maxSteps - 1)
 
 while (steps < maxSteps) {
 
