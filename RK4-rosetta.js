@@ -22,36 +22,35 @@ function actual(x) {
     return Math.exp(-x);
 }
 
-var y = 1.0,
-    x = 0.0,
-    ymax = 10,
+var y        = 1.0,
+    x        = 0.0,
+    ymax     = 10,
     maxSteps = 100001,
-    step = ymax / maxSteps,
-    diff = 0,
-    yex = 0,
-    err2 = 0,
-    err = 0,
-    steps = 0,
-    X = constructor(maxSteps - 1),
-    Y = constructor(maxSteps - 1),
-    sampleEveryN = 10;
+    step     = ymax / maxSteps,
+    diff     = 0,
+    yex      = 0,
+    err2     = 0,
+    err      = 0,
+    steps    = 0,
+    X        = constructor(maxSteps - 1),
+    Y        = constructor(maxSteps - 1)
 
 while (steps < maxSteps) {
 
-    y = rk4(y, x, step, f);
-    yex = actual(x);
-    diff = yex - y
-    err2 = err2 + (diff * diff)/(maxSteps - 1)
-    Y[steps] = y
+    y        = rk4(y, x, step, f);
+    yex      = actual(x);
+    diff     = yex - y;
+    err2     = err2 + (diff * diff)/(maxSteps - 1);
+    Y[steps] = y;
 
     // using integer math for the step addition
     // to prevent floating point errors as 0.2 + 0.1 != 0.3
-    x = ((x * 10) + (step * 10)) / 10;
-    X[steps] = x
-    steps += 1;
+    x        = ((x * 10) + (step * 10)) / 10;
+    X[steps] = x;
+    steps   += 1;
 }
 
-err = Math.sqrt(err2);
+err     = Math.sqrt(err2);
 
 var arr = Object.keys(Y).map(function (key) {return [X[key], Y[key]]}); // inspired by http://stackoverflow.com/a/26166303/1876983
 console.log(err)
