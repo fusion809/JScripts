@@ -1,9 +1,9 @@
 // This script was partly copied from the Rosetta Code Runge-Kutta Method article
 // (https://rosettacode.org/wiki/Runge-Kutta_method#JavaScript). It uses the RK4
-// method to solve the 2nd-order ODE d2y/dx2=-9.8cos(y), which has no known exact
+// method to solve the 2nd-order ODE d2y/dx2=-x*y, which has no known exact
 // solution.
-// y[0] = 0
-// y'[0] = 0
+// y[0] = AiryAi[0]
+// y'[0] = AiryAi'[0]
 // dy/dx = y[1]
 // d2y/dx2 = -9.8 cos(y[0])
 // 0 <= x <= 10
