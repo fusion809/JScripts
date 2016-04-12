@@ -1,9 +1,9 @@
 // This script was partly copied from the Rosetta Code Runge-Kutta Method article
 // (https://rosettacode.org/wiki/Runge-Kutta_method#JavaScript). It uses the RK4
 // method to solve the first-order ODE dy/dx=-y, which has the exact solution
-// y = e^(-x) on 0 < x < 10
+// y = e^(-x) on 0 =< x =< 10
 // y[0] = 1
-var gnuplot = require('gnu-plot');
+var gnuplot = require('gnu-plot'); // Requires the gnu-plot Node.js module
 
 function rk4(y, x, dx, f) {
     var k1 = dx * f(x, y),
@@ -53,12 +53,12 @@ while (steps < maxSteps) {
 
 err = Math.sqrt(err2);
 
-var arr = Object.keys(Y).map(function (key) {return [X[key], Y[key]]});
+var arr = Object.keys(Y).map(function (key) {return [X[key], Y[key]]}); // inspired by http://stackoverflow.com/a/26166303/1876983
 console.log(err)
 console.log(diff)
 gnuplot().plot([{
-    title:"data3",
+    title:"y[x]",
     style:"lines",
-    color:"#00FF00",
+    color:"#F0F",
     data:arr
 }]);
