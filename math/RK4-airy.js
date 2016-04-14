@@ -5,7 +5,7 @@
 // y[0] = AiryAi[0]
 // y'[0] = AiryAi'[0]
 // dy/dx = y[1]
-// d2y/dx2 = -9.8 cos(y[0])
+// d2y/dx2 = xy
 // xmax <= x <= x0
 
 var gnuplot = require('gnu-plot'); // Requires the gnu-plot Node.js module
