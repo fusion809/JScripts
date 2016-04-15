@@ -6,8 +6,8 @@
 var FUNCT = require('../../lib/RK4/2nd.js'),
     math  = require('mathjs');
 
-function f(x, y, dy) {
-  var v      = 1,
+function f(x, y, dy, opt) {
+  var v      = opt[0],
       pi     = math.pi,
       d2y    = -(dy/x) - (1-(v*v)/(x*x))*y + (x-v)/(pi*x*x)*Math.sin(pi*v)
   return d2y
@@ -17,6 +17,7 @@ var y0       = 1, // y[0]
     dy0      = 0, // dy/dx |x=0
     x0       = 0.01,
     x1       = 1000,
-    N        = 1000001;
+    N        = 1000001,
+    opt[0]   = 1; // v
 
-FUNCT.RK4(x0, x1, y0, dy0, N, f)
+FUNCT.RK4(x0, x1, y0, dy0, N, f, opt)
