@@ -1,9 +1,9 @@
-// Import RK4-2nd
-var FUNCT = require('../lib/RK4-2nd.js');
-
 ////////////////////////////////////////////////////////////////////////////////
 ////// Radial wave equation http://math.stackexchange.com/a/1322104/50221 //////
 ////////////////////////////////////////////////////////////////////////////////
+
+// Import RK4-2nd
+var FUNCT = require('../../lib/RK4/2nd.js');
 
 function f(x, y, dy) {
   var d2y = - (2*dy)/x - y + (2*y)/(x*x)
