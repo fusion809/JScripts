@@ -5,7 +5,7 @@
 // dy/dx = y[1]
 // xmax <= x <= x0
 
-// Import RK4-2nd
+// Import RK4 2nd order library
 var FUNCT = require('../../lib/RK4/2nd.js');
 
 // d2y/dx2 = f(x,y,dy/dx)
