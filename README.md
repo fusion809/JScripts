@@ -31,11 +31,11 @@ An example structure for this repository is:
 
 The `lib` folder, as one may guess, contains scripts that are used in other scripts (usually because they contain useful functions). The `RK4` subfolder of the `lib` folder contains scripts related to the fourth-order Runge-Kutta Method, although known by the abbreviated RK4. The `1st-order.js` script is for solving equations of the form:
 
-<img src="images/generalized-1st-order-eq.png" align="center" border="0" alt="\frac{dy}{dx} = f(x,y)" width="100" height="43" />
+<img src="images/generalized-1st-order-eq.png" align="center" border="0" alt="\frac{dy}{dx} = f(x,y)" width="92" height="36" />
 
 The `2nd-order.js` script is for equations of the form:
 
-<img src="images/generalized-2nd-order-eq.png" align="center" border="0" alt="\frac{d^2 y}{dx^2} = f\left(x,y,\frac{dy}{dx}\right)" width="154" height="50" />
+<img src="images/generalized-2nd-order-eq.png" align="center" border="0" alt="\frac{d^2 y}{dx^2} = f\left(x,y,\frac{dy}{dx}\right)" width="140" height="43" />
 
 
 ## Airy Equation
