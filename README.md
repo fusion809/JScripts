@@ -26,6 +26,11 @@ Where `lib1` is the name of library number one, `lib2` is the name of library nu
 
 ## Airy Equation
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
 
 $$ \frac{d^2 y}{dx^2} = xy $$
 
