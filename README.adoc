@@ -32,6 +32,18 @@ An example structure for this repository is:
 
 The `lib` folder, as one may guess, contains scripts that are used in other scripts (usually because they contain useful functions). The `RK4` subfolder of the `lib` folder contains scripts related to the fourth-order Runge-Kutta Method, although known by the abbreviated RK4. The `1st-order.js` script is for solving equations of the form:
 
+[stem]
+++++
+\frac{dy}{dx} = f(x,y)
+++++
+
+The `2nd-order.js` script is for equations of the form:
+
+[stem]
+++++
+\frac{d^2 y}{dx^2} = f\left(x,y,\frac{dy}{dx}\right)
+++++
+
 == How to use these scripts
 In order to use these scripts I recommend you have Git, Node.js and NPM installed and run:
 
