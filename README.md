@@ -35,7 +35,7 @@ The `lib` folder, as one may guess, contains scripts that are used in other scri
 
 The `2nd-order.js` script is for equations of the form:
 
-<img src="images/generalized-2nd-order-eq.png" align="center" border="0" alt="\frac{d^2 y}{dx^2} = f\left(x,y,\frac{dy}{dx}\right)" width="456" height="140" />
+<img src="images/generalized-2nd-order-eq.png" align="center" border="0" alt="\frac{d^2 y}{dx^2} = f\left(x,y,\frac{dy}{dx}\right)" width="400" height="122" />
 
 
 ## Airy Equation
