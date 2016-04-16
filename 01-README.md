@@ -2,27 +2,41 @@
 This repository mostly contains scripts, written in JavaScript (JS), for the purpose of scientific computing. Here there be ODE solvers.
 
 ## Structure
-This repository's basic structure is:
+An example structure for this repository is:
 
 ```bash
 .
-├── lib
-│   ├── lib1.js
-│   ├── lib2.js
-│   ├── lib3.js
-│   ├── ...
-│   └── lib(n).js
+├── lib/
+│   └── RK4/
+│       ├── 1st-order.js
+│       ├── 2nd-order.js
+│       └── 3-coupled-1st.js
 ├── LICENSE
-├── math
-│   ├── math-program1.js
-│   ├── math-program2.js
-│   ├── math-program3.js
-│   ├── ...
-│   └── math-program(n).js
+├── math/
+│   ├── old/
+│   │   ├── RK4-airy.js
+│   │   ├── RK4-rosetta.js
+│   │   ├── RK4-simpen.js
+│   │   └── RK4.js
+│   ├── RK4/
+│   │   ├── airy.js
+│   │   ├── anger.js
+│   │   ├── hermite.js
+│   │   ├── lorenz.js
+│   │   └── rwave.js
+│   └── work-in-progress/
+│       └── SLE-airy.js
 └── README.md
 ```
 
-Where `lib1` is the name of library number one, `lib2` is the name of library number two, *etc.* Likewise `math-program1` refers to the name of mathematics program number 1, `math-program2` refers to the name of mathematics program number 2, *etc.* Libraries, in this repository, at least, refers to scripts that define important functions used, or likely to be used, by more than one other script.
+The `lib` folder, as one may guess, contains scripts that are used in other scripts (usually because they contain useful functions). The `RK4` subfolder of the `lib` folder contains scripts related to the fourth-order Runge-Kutta Method, although known by the abbreviated RK4. The `1st-order.js` script is for solving equations of the form:
+
+<img src="http://www.sciweavers.org/tex2img.php?eq=%5Cfrac%7Bdy%7D%7Bdx%7D%20%3D%20f%28x%2Cy%29&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0" align="center" border="0" alt="\frac{dy}{dx} = f(x,y)" width="100" height="43" />
+
+The `2nd-order.js` script is for equations of the form:
+
+<img src="http://bit.ly/1TbpDsG" align="center" border="0" alt="\frac{d^2 y}{dx^2} = f\left(x,y,\frac{dy}{dx}\right)" width="154" height="50" />
+
 
 ## Airy Equation
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
