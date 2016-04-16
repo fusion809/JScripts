@@ -34,7 +34,7 @@ The `lib` folder, as one may guess, contains scripts that are used in other scri
 
 [stem]
 ++++
-sqrt(2)
+\sqrt(2)
 ++++
 
 == How to use these scripts
