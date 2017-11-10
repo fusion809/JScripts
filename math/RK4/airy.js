@@ -6,7 +6,7 @@
 // xmax <= x <= x0
 
 // Import RK4 2nd order library
-var FUNCT = require('../../lib/RK4/2nd.js');
+var FUNCT = require('../../lib/RK4/2nd-order.js');
 
 // d2y/dx2 = f(x,y,dy/dx)
 function f(x, y, dy) {
@@ -20,5 +20,5 @@ var y0       = 0.355028053887817239260063186004183176397979174199177240583, // y
     x1       = -250,
     N        = 1000001
 
-ARR = FUNCT.RK4.getX(x0, x1, y0, dy0, N, f)
-X = ARR
+
+FUNCT.RK4(x0, x1, y0, dy0, N, f, 'airy.log')
